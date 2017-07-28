@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Light" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,54 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLR-Z1-cn1">
+                                <rect key="frame" x="99" y="395" width="177" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="mJI-ei-5M3"/>
+                                    <constraint firstAttribute="height" constant="21" id="nHH-Bo-wGi"/>
+                                    <constraint firstAttribute="width" constant="177" id="sec-aH-qSk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvr-Ph-0EQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <action selector="lightButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HB1-ou-bhd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Anywhere!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEX-9f-60j">
+                                <rect key="frame" x="131" y="323" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="TLR-Z1-cn1" secondAttribute="trailing" constant="83" id="AAb-nP-g4l"/>
+                            <constraint firstItem="lEX-9f-60j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ewa-37-BWM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vvr-Ph-0EQ" secondAttribute="bottom" id="HF9-9S-NOP"/>
+                            <constraint firstItem="vvr-Ph-0EQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jk2-k1-trg"/>
+                            <constraint firstItem="TLR-Z1-cn1" firstAttribute="top" secondItem="lEX-9f-60j" secondAttribute="bottom" constant="51" id="ROH-8V-A5m"/>
+                            <constraint firstItem="TLR-Z1-cn1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hU0-Jv-3D9"/>
+                            <constraint firstItem="vvr-Ph-0EQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="he5-WG-Eis"/>
+                            <constraint firstItem="lEX-9f-60j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k2M-Ov-VXg"/>
+                            <constraint firstAttribute="trailing" secondItem="vvr-Ph-0EQ" secondAttribute="trailing" id="oy6-nH-q6n"/>
+                            <constraint firstItem="TLR-Z1-cn1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="83" id="pRU-5D-Hqj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greetingLabel" destination="TLR-Z1-cn1" id="u89-vL-Y7Z"/>
+                        <outlet property="instruction" destination="lEX-9f-60j" id="uxW-8e-3Yx"/>
+                        <outlet property="lightButton" destination="vvr-Ph-0EQ" id="Xhq-q1-OMB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
